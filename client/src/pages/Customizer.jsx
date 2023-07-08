@@ -1,11 +1,11 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useSnapshot } from "valtio";
 
-import config from "../config";
+import config from "../config/config.js";
 import state from '../store';
 import { download } from "../assets";
 import { downloadCanvasToImage, reader } from "../config/helpers.js";
-import { EditorTabs, FilterTabs, DecalTypes } from "../config";
+import { EditorTabs, FilterTabs, DecalTypes } from "../config/constants.js";
 import { fadeAnimation, slideAnimation } from "../config/motion.js";
 import { AiPicker, ColorPicker, CustomButton, FilePicker, Tab } from "../components";
 
