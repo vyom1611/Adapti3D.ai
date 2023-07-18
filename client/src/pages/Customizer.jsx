@@ -18,7 +18,7 @@ const Customizer = () => {
 				<>
 					<motion.div
 						key="custom"
-						className="absolute top-0 left-0 z-10 w-full h-full flex flex-col items-center justify-center"
+						className="absolute top-0 left-0 z-10"
 						{...slideAnimation('left')}
 					>
 						<div className="flex items-center min-h-screen">
@@ -30,10 +30,15 @@ const Customizer = () => {
 										handleClick={() => {}}
 									/>
 								))}
+
 							</div>
 						</div>
 					</motion.div>
-					<motion.div className="absolute z-10 top-5 right-5" {...fadeAnimation}>
+
+					<motion.div
+						className="absolute z-10 top-5 right-5"
+						{...fadeAnimation}
+					>
 						<CustomButton
 							type="filled"
 							title="Go Back"
@@ -41,16 +46,17 @@ const Customizer = () => {
 							customStyles="w-fit px-4 py-2.5 font-bold text-sm"
 						/>
 					</motion.div>
+
 					<motion.div
-						className="filtertabs-filter"
-						{...slideAnimation('up')}
+						className='filtertabs-container'
+						{...slideAnimation("up")}
 					>
 						{FilterTabs.map((tab) => (
 							<Tab
 								key={tab.name}
 								tab={tab}
 								isFilterTab
-								isActivateTab = ""
+								isActiveTab={""}
 								handleClick={() => {}}
 							/>
 						))}

@@ -15,7 +15,7 @@ const Shirt = () => {
 
 	useFrame((state, delta) => {
 		easing.dampC(
-			materials.lamber1.color,
+			materials.lambert1.color,
 			snap.color,
 			0.25,
 			delta
@@ -23,7 +23,7 @@ const Shirt = () => {
 	});
 
 	return (
-		<group key={stateString}> // Tracking state changes
+		<group key={stateString}>
 			<mesh
 				castShadow
 				geometry={nodes.T_Shirt_male.geometry}

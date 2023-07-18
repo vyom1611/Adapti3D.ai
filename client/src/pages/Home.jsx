@@ -12,10 +12,10 @@ const Home = () => {
 	return (
 		<AnimatePresence>
 			{snap.intro && (
-			<motion.div className="home" {...slideAnimation('left')}>
+			<motion.section className="home bg-amber-500" {...slideAnimation('left')}>
 				<motion.header {...slideAnimation('down')}>
 					<img
-						src="/assets/logo.svg"
+						src="/threejs.png"
 						alt="logo"
 						className="w-8 h-8 object-contain"
 					/>
@@ -34,10 +34,11 @@ const Home = () => {
 							type="filled"
 							handleClick={() => state.intro = false}
 							customStyles="w-fit px-4 font-bold text-sm"
+							title="Get Started"
 						/>
 					</motion.div>
 				</motion.div>
-			</motion.div>
+			</motion.section>
 			)
 			}
 		</AnimatePresence>
