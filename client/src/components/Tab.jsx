@@ -5,15 +5,16 @@ import state from "../store/index.js";
 const Tab = ({ tab, isFilterTab, isActiveTab, handleClick }) => {
     const snap = useSnapshot(state);
 
-    const styling = isFilterTab && isActiveTab
-        ? { backgroundColor: snap.color , opacity : 0.5 }
-        : { backgroundColor: 'transparent', opacity: 1 };
+    const activeStyles = isFilterTab && isActiveTab
+        ? { backgroundColor: snap.color, opacity: 0.5 }
+        : { backgroundColor: "transparent", opacity: 1 }
 
     return (
-        <div key={tab.name}
-             className={`tab-btn ${isFilterTab ? 'rounded-full glassmorphism' : 'rounded-4'}'`}
-             onClick={handleClick}
-             style={styling}
+        <div
+            key={tab.name}
+            className={`tab-btn ${isFilterTab ? 'backdrop-blur left-0' : 'bottom-0 rounded-4'}`}
+            onClick={handleClick}
+            style={activeStyles}
         >
             <img src={tab.icon}
                  alt={tab.name}
